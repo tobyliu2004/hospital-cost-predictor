@@ -41,7 +41,15 @@ def preprocess_uploaded_data(df_raw, model):
     df['Is_Surgical'] = (df['APR Medical Surgical Description'] == 'Surgical').astype(int)
     df['Was_Emergency'] = (df['Type of Admission'] == 'Emergency').astype(int)
     df['Used_ER'] = (df['Emergency Department Indicator'] == 'Y').astype(int)
-
+    if 'Age Group Ordinal' not in df.columns and 'Age Group' in df.columns:
+        age_mapping = {
+            '0 to 17': 0,
+            '18 to 29': 1,
+            '30 to 49': 2,
+            '50 to 69': 3,
+            '70 or Older': 4
+        }
+    df['Age Group Ordinal'] = df['Age Group'].map(age_mapping)
     df['Severity_LOS'] = df['APR Severity of Illness Code'] * df['Length of Stay']
     df['Risk_Cost'] = df['APR Risk of Mortality'] * df['Total Costs']
     df['Age_LOS'] = df['Age Group Ordinal'] * df['Length of Stay']
