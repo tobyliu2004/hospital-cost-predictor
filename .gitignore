@@ -1,0 +1,22 @@
+# Bytecode + checkpoints
+__pycache__/
+*.pyc
+*.ipynb_checkpoints
+
+# Data + models
+data/
+csv/
+models/
+*.pkl
+*.csv
+*.json
+
+# Streamlit
+.streamlit/
+
+# Reports + images
+reports/
+images/
+
+# MacOS
+.DS_Store
