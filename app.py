@@ -5,7 +5,7 @@ import shap
 import matplotlib.pyplot as plt
 import numpy as np
 from streamlit_shap import st_shap
-from config import MODEL_PATH, REQUIRED_COLUMNS
+from config import FINAL_MODEL_PATH, REQUIRED_COLUMNS
 from utils.schema import validate_input_schema
 
 
@@ -76,7 +76,7 @@ st.title("\U0001F3E5 Hospital Cost Predictor")
 st.write("Upload one or more rows of patient data as a CSV.")
 
 # === Load model ===
-model = joblib.load(MODEL_PATH)
+model = joblib.load(FINAL_MODEL_PATH)
 expected_cols = model.get_booster().feature_names
 st.subheader("🧠 Model Feature Columns (Expected)")
 st.write(expected_cols)
