@@ -126,17 +126,14 @@ if uploaded_file:
         st_shap(shap.plots.waterfall(shap_values[0], max_display=15), height=500)
 
 import io
-csv_buffer = io.StringIO()
-results_df.to_csv(csv_buffer, index=False)
-csv_data = csv_buffer.getvalue()
+if "results_df" in locals():
+    csv_buffer = io.StringIO()
+    results_df.to_csv(csv_buffer, index=False)
+    csv_data = csv_buffer.getvalue()
 
-st.download_button(
-    label="📁 Download Predictions as CSV",
-    data=csv_data,
-    file_name="predicted_charges.csv",
-    mime="text/csv"
-)
-
-
-
-# dummy change
+    st.download_button(
+        label="📁 Download Predictions as CSV",
+        data=csv_data,
+        file_name="predicted_charges.csv",
+        mime="text/csv"
+    )
