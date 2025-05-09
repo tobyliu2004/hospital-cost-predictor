@@ -9,7 +9,7 @@ from config import FINAL_MODEL_PATH, REQUIRED_COLUMNS
 from utils.schema import validate_input_schema
 import urllib.request
 
-model_url = "https://github.com/tobyliu2004/hospital-cost-predictor/releases/tag/model"
+model_url = "https://github.com/tobyliu2004/hospital-cost-predictor/releases/download/model/final_xgb_model.pkl"
 urllib.request.urlretrieve(model_url, "model.pkl")
 model = joblib.load("model.pkl")
 
