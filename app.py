@@ -7,7 +7,11 @@ import numpy as np
 from streamlit_shap import st_shap
 from config import FINAL_MODEL_PATH, REQUIRED_COLUMNS
 from utils.schema import validate_input_schema
+import urllib.request
 
+model_url = "https://github.com/tobyliu2004/hospital-cost-predictor/releases/tag/model"
+urllib.request.urlretrieve(model_url, "model.pkl")
+model = joblib.load("model.pkl")
 
 # === Preprocessing Function ===
 def preprocess_uploaded_data(df_raw, model):
@@ -76,7 +80,6 @@ st.title("\U0001F3E5 Hospital Cost Predictor")
 st.write("Upload one or more rows of patient data as a CSV.")
 
 # === Load model ===
-model = joblib.load(FINAL_MODEL_PATH)
 expected_cols = model.get_booster().feature_names
 st.subheader("🧠 Model Feature Columns (Expected)")
 st.write(expected_cols)
