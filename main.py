@@ -1,5 +1,8 @@
 # main.py
-
+#below to push new changes to github
+#git add .
+#git commit -m "Update README and project files"
+#git push origin main
 from pipeline_trainer import BillingCostPredictor
 from scripts.tuning_utils import run_optuna #Dont need this because saved the run optuna to disk
 from scripts.fairness_audit import compute_groupwise_mae, plot_groupwise_mae, residual_distribution_by_group
