@@ -264,7 +264,7 @@ plot_pca_anomalies(audit_df)
 
 **Toby Liu**  
 Undergraduate Researcher, ML Engineer in Training  
-[LinkedIn](https://linkedin.com/in/YOUR-LINK-HERE) | [GitHub](https://github.com/YOUR-GITHUB-HERE)
+[LinkedIn](https://www.linkedin.com/in/toby-liu-b45090257) | [GitHub](https://github.com/tobyliu2004)
 
 This project was developed as a capstone for **PSTAT 131** and extended into a professional ML portfolio piece targeting industry roles.
 
